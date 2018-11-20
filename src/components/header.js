@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import { sizes, mq } from './globalStyles';
+
 const SiteTitle = styled.h1({
-  margin: 0,
+  margin: '.5em 0 1em',
   fontSize: '2.25em',
-  textAlign: 'center',
+  [mq('min', sizes.tablet)]: {
+    textAlign: 'center',
+  },
 });
 
-const Container = styled.div({
-  marginBottom: '1.5em',
-  padding: '1.45em 1.1em',
-});
-
-const Header = ({ siteTitle }) => (
-  <Container>
-    <SiteTitle>{siteTitle}</SiteTitle>
-  </Container>
-);
+const Header = ({ siteTitle }) => <SiteTitle>{siteTitle}</SiteTitle>;
 
 export default Header;
