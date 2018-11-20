@@ -11,10 +11,17 @@ html { margin: 0; box-sizing: border-box; }
 *,*:before,*:after { box-sizing: inherit; }
 `;
 
+export const sizes = { phone: 450, tablet: 768, desktop: 1050 };
+export const mq = (type, size) =>
+  `@media (${type === 'min' ? 'min' : 'max'}-width: ${size}px)`;
+
 const Main = styled.div({
   margin: '0 auto',
   padding: '0 1em 1.5em',
   width: '100%',
+  [mq('min', sizes.desktop)]: {
+    maxWidth: '700px', // TODO: Find the correct width after content is added
+  },
 });
 
 const Layout = ({ children }) => (
