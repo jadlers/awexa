@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'react-emotion';
+import styled, { injectGlobal } from 'react-emotion';
 
 import Header from './header';
+
+injectGlobal`
+html { margin: 0; box-sizing: border-box; }
+*,*:before,*:after { box-sizing: inherit; }
+`;
 
 const Main = styled.div({
   margin: '0 auto',
