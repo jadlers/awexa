@@ -4,7 +4,8 @@ import styled from 'react-emotion';
 import { sizes, mq } from './globalStyles';
 
 const SiteTitle = styled.h1({
-  margin: '.5em 0 1em',
+  margin: 0,
+  padding: '.5em 0 1em',
   fontSize: '2.25em',
   [mq('min', sizes.tablet)]: {
     textAlign: 'center',
