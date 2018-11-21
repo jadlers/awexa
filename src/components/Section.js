@@ -1,23 +1,36 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import { mq, sizes } from './globalStyles';
+
+const SectionWrapper = styled.section(props => ({
+  [mq('min', sizes.desktop)]: {
+    marginLeft: props.right && '20%',
+    marginRight: props.left && '20%',
+    padding: '.5em',
+  },
+  marginBottom: '3em',
+}));
+
 const Title = styled.h1({
+  marginTop: 0,
   fontSize: '1.75em',
 });
 
 const Content = styled.div({
   color: '#222',
+  fontSize: '1.25em',
+  lineHeight: '1.35',
+  '& :last-child': {
+    marginBottom: 0,
+  },
 });
 
-const Section = () => (
-  <>
+const Section = props => (
+  <SectionWrapper {...props}>
     <Title>{title}</Title>
-    <Content>
-      {paragraphs.map(content => (
-        <p>{content}</p>
-      ))}
-    </Content>
-  </>
+    <Content>{content}</Content>
+  </SectionWrapper>
 );
 
 // TODO: This should be sourced from the Netlify CMS
