@@ -5,8 +5,8 @@ import { mq, sizes } from './globalStyles';
 
 const SectionWrapper = styled.section(props => ({
   [mq('min', sizes.desktop)]: {
-    marginLeft: props.right && '20%',
-    marginRight: props.left && '20%',
+    marginLeft: props.position === 'right' && '20%',
+    marginRight: props.position === 'left' && '20%',
     padding: '.5em',
   },
   marginBottom: '3em',
