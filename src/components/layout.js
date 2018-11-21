@@ -12,7 +12,9 @@ const Main = styled.div({
   padding: '0 1em 1.5em',
   width: '100%',
   [mq('min', sizes.desktop)]: {
-    maxWidth: '700px', // TODO: Find the correct width after content is added
+    maxWidth: `${sizes.desktop}px`,
+    paddingLeft: 0,
+    paddingRight: 0,
   },
 });
 
