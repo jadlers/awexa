@@ -2,9 +2,11 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import Section from '../components/Section';
+import StickFigure from '../components/StickFigure';
 
 const IndexPage = () => (
   <Layout>
+    <StickFigure />
     {sections.map((item, idx) => {
       const position = idx % 2 === 0 ? 'left' : 'right';
       return (
