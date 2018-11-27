@@ -2,11 +2,11 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import Section from '../components/Section';
-import StickFigure from '../components/StickFigure';
+import Introduction from '../components/Introduction';
 
 const IndexPage = () => (
   <Layout>
-    <StickFigure />
+    <Introduction content={sections[0].content} />
     {sections.map((item, idx) => {
       const position = idx % 2 === 0 ? 'left' : 'right';
       return (
@@ -21,12 +21,14 @@ const IndexPage = () => (
   </Layout>
 );
 
+// TODO: Make this come from Netlify CMS
 const sections = [
   {
     id: 1,
     title: 'Vilka är vi?',
     content: (
       <>
+        <h1>Vilka är vi?</h1>
         <p>
           Vi på Awexa hjälper dig att komma in på rätt spår. Vi har lång
           erfarenhet (64 år) av att se till så du gör rätt saker i rätt tid på
@@ -56,7 +58,7 @@ const sections = [
           hela vägen till din framtid.
         </p>
         <p>
-          Under mina ås i Malmö är det många som har fått hjälp med både stora
+          Under mina år i Malmö är det många som har fått hjälp med både stora
           och små problem. Inget är för mig främmande.
         </p>
         <p>Av mig kan du få hjälp med</p>
