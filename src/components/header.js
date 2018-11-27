@@ -5,10 +5,14 @@ import { sizes, mq } from './globalStyles';
 
 const SiteTitle = styled.h1({
   margin: 0,
-  padding: '.5em 0 1em',
+  marginBottom: '1em',
+  padding: '.5em 0 0',
   fontSize: '2.25em',
+  color: '#444',
+  fontWeight: 'normal',
   [mq('min', sizes.tablet)]: {
     textAlign: 'center',
+    borderBottom: '1px solid #777',
   },
 });
 
