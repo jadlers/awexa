@@ -1,25 +1,18 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-import Section from '../components/Section';
 import Introduction from '../components/Introduction';
 import ImageDivider from '../components/ImageDivider';
+import PersonalPresentations from '../components/PersonalPresentations';
 
 const IndexPage = () => (
   <Layout>
     <Introduction content={sections[0].content} />
     <ImageDivider number={0} />
-    {sections.map((item, idx) => {
-      const position = idx % 2 === 0 ? 'left' : 'right';
-      return (
-        <Section
-          key={item.id}
-          title={item.title}
-          content={item.content}
-          position={position}
-        />
-      );
-    })}
+    <PersonalPresentations
+      agneta={sections[1].content}
+      johan={sections[2].content}
+    />
   </Layout>
 );
 
@@ -52,6 +45,7 @@ const sections = [
     title: 'Agneta',
     content: (
       <>
+        <h1>Agneta</h1>
         <p>
           Jag har 40 års erfarenhet av att hjälpa folk med sin personliga
           utveckling. Som kurator och psykoterapeut använder jag mig av mina
@@ -79,6 +73,7 @@ const sections = [
     title: 'Johan',
     content: (
       <>
+        <h1>Johan</h1>
         <p>
           Jag har sedan 1994 hjälpt folk att handera Word så att de kan skriva
           bra ansökningshandlingar. Mina kunskaper i Word är kompletta. Att läsa
