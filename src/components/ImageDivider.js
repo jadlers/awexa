@@ -11,6 +11,8 @@ const Image = styled(Img)`
   left: 49%;
 `;
 
+const credit = ['Photo by David Iskander on Unsplash.com'];
+
 export default ({ number }) => (
   <StaticQuery
     query={graphql`
@@ -31,7 +33,10 @@ export default ({ number }) => (
       }
     `}
     render={data => (
-      <Image fluid={data[`image${number}`].childImageSharp.fluid} />
+      <Image
+        title={credit[number]}
+        fluid={data[`image${number}`].childImageSharp.fluid}
+      />
     )}
   />
 );
