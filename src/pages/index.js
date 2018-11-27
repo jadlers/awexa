@@ -13,6 +13,7 @@ const IndexPage = () => (
       agneta={sections[1].content}
       johan={sections[2].content}
     />
+    <ImageDivider number={1} />
   </Layout>
 );
 

@@ -11,7 +11,10 @@ const Image = styled(Img)`
   left: 49%;
 `;
 
-const credit = ['Photo by David Iskander on Unsplash.com'];
+const credit = [
+  'Photo by David Iskander on Unsplash.com',
+  'Photo by Vero Photoart on Unsplash.com',
+];
 
 export default ({ number }) => (
   <StaticQuery
@@ -30,11 +33,17 @@ export default ({ number }) => (
         ) {
           ...dividerImage
         }
+
+        image1: file(
+          relativePath: { eq: "vero-photoart-140937-unsplash.jpg" }
+        ) {
+          ...dividerImage
+        }
       }
     `}
     render={data => (
       <Image
-        title={credit[number]}
+        title={credit[number] || ''}
         fluid={data[`image${number}`].childImageSharp.fluid}
       />
     )}
