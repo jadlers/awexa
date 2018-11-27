@@ -3,10 +3,12 @@ import React from 'react';
 import Layout from '../components/layout';
 import Section from '../components/Section';
 import Introduction from '../components/Introduction';
+import ImageDivider from '../components/ImageDivider';
 
 const IndexPage = () => (
   <Layout>
     <Introduction content={sections[0].content} />
+    <ImageDivider number={0} />
     {sections.map((item, idx) => {
       const position = idx % 2 === 0 ? 'left' : 'right';
       return (
