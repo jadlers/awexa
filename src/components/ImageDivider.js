@@ -21,7 +21,7 @@ export default ({ number }) => (
     query={graphql`
       fragment dividerImage on File {
         childImageSharp {
-          fluid(cropFocus: CENTER) {
+          fluid(maxWidth: 2440, quality: 80, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid
           }
         }
