@@ -3,12 +3,17 @@ import Img from 'gatsby-image';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
+import { mq, sizes } from '../components/globalStyles';
+
 const Image = styled(Img)`
   max-height: 200px;
-  margin: 3em 0;
-  width: 100vw;
-  margin-left: -50vw;
-  left: 49%;
+  margin: 3em -1em;
+
+  ${mq('min', sizes.tablet)} {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 49%;
+  }
 `;
 
 const credit = [

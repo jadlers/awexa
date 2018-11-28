@@ -9,7 +9,7 @@ import Header from './header';
 
 const Main = styled.div({
   margin: '0 auto',
-  padding: '0 1em 1.5em',
+  padding: '0 1em',
   width: '100%',
   [mq('min', sizes.desktop)]: {
     maxWidth: `${sizes.desktop}px`,

@@ -1,14 +1,22 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import { mq, sizes } from '../components/globalStyles';
+
 const Wrapper = styled.section`
   display: flex;
+  flex-direction: column;
   color: #222;
+
+  ${mq('min', sizes.tablet)} {
+    flex-direction: row;
+  }
 `;
 
 const Presentation = styled.div`
-  padding: 0 2em;
-  min-width: 350px;
+  ${mq('min', sizes.tablet)} {
+    padding: 0 2em;
+  }
 
   h1 {
     margin-top: 0;

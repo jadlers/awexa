@@ -2,11 +2,25 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import StickFigure from './StickFigure';
+import { mq, sizes } from '../components/globalStyles';
+
+const IntroductionWrapper = styled.section`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  ${mq('min', sizes.tablet)} {
+    flex-direction: row;
+  }
+`;
 
 const Content = styled.div({
   color: '#222',
-  maxWidth: '55%',
   '& :last-child': { marginBottom: 0 },
+
+  [mq('min', sizes.tablet)]: {
+    maxWidth: '55%',
+  },
 
   h1: {
     marginTop: 0,
@@ -20,13 +34,11 @@ const Content = styled.div({
 });
 
 const Aside = styled.aside`
-  padding: 0 3em;
   margin: 0 auto;
-`;
 
-const IntroductionWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  ${mq('min', sizes.tablet)} {
+    padding: 0 3em;
+  }
 `;
 
 const Introduction = ({ content }) => (
