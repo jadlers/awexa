@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from '../components/Footer';
 import Layout from '../components/layout';
 import Introduction from '../components/Introduction';
 import ImageDivider from '../components/ImageDivider';
@@ -14,6 +15,7 @@ const IndexPage = () => (
       johan={sections[2].content}
     />
     <ImageDivider number={1} />
+    <Footer phone="0046 123 45 67" email="example@awexa.se" />
   </Layout>
 );
 
