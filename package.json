@@ -1,7 +1,6 @@
 {
   "name": "Awexa",
   "description": "Website for Awexa AB",
-  "version": "0.1",
   "author": "Jacob Adlers <jacob.adlers@gmail.com>",
   "dependencies": {
     "emotion": "^9.2.12",
