@@ -14,24 +14,23 @@ const IntroductionWrapper = styled.section`
   }
 `;
 
-const Content = styled.div({
-  color: '#222',
-  '& :last-child': { marginBottom: 0 },
+const Content = styled.div`
+  color: #222;
 
-  [mq('min', sizes.tablet)]: {
-    maxWidth: '55%',
-  },
+  ${mq('min', sizes.tablet)}: {
+    max-width: 55%;
+  };
 
   h1: {
-    marginTop: 0,
-    fontSize: '1.75em',
-  },
+    margin-top: 0;
+    font-size: 1.75em;
+  }
 
-  p: {
-    fontSize: '1.25em',
-    lineHeight: '1.35',
-  },
-});
+  p {
+    font-size: 1.25em;
+    line-height: 1.35;
+  }
+`;
 
 const Aside = styled.aside`
   margin: 0 auto;
