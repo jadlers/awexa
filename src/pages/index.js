@@ -6,19 +6,6 @@ import Introduction from '../components/Introduction';
 import ImageDivider from '../components/ImageDivider';
 import PersonalPresentations from '../components/PersonalPresentations';
 
-const IndexPage = () => (
-  <Layout>
-    <Introduction content={sections[0].content} />
-    <ImageDivider number={0} />
-    <PersonalPresentations
-      agneta={sections[1].content}
-      johan={sections[2].content}
-    />
-    <ImageDivider number={1} />
-    <Footer phone="0046 123 45 67" email="example@awexa.se" />
-  </Layout>
-);
-
 // TODO: Make this come from Netlify CMS
 const sections = [
   {
@@ -107,5 +94,18 @@ const sections = [
     ),
   },
 ];
+
+const IndexPage = () => (
+  <Layout>
+    <Introduction content={sections[0].content} />
+    <ImageDivider number={0} />
+    <PersonalPresentations
+      agneta={sections[1].content}
+      johan={sections[2].content}
+    />
+    <ImageDivider number={1} />
+    <Footer phone="0046 123 45 67" email="example@awexa.se" />
+  </Layout>
+);
 
 export default IndexPage;

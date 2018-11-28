@@ -1,0 +1,6 @@
+{
+  "extends": ["react", "prettier"],
+  "rules": {
+    "react/prop-types": false
+  }
+}
