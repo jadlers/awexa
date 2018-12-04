@@ -1,4 +1,7 @@
-# Vilka är vi?
+---
+title: "Vilka är vi?"
+path: "home/introduction"
+---
 
 Vi på Awexa hjälper dig att komma in på rätt spår. Vi har lång erfarenhet (64 år) av att se till så du gör rätt saker i rätt tid på rätt plats.
 

@@ -1,13 +1,15 @@
 backend:
   name: git-gateway
   branch: master
+
 media_folder: "src/images"
+
 collections:
-  - name: "home"
-    label: "Hem"
-    files:
-      - file: "src/cms/home/introduction.md"
-        label: "Introduktion"
-        name: "introduction"
-        fields:
-          - {label: "Body", name: "body", widget: "markdown"}
+  - label: Home Employees
+    name: home-employees
+    folder: cms/home/employees
+    create: true # TODO: Change to false
+    fields:
+      - {label: Path, name: path}
+      - {label: Name, name: title, widget: string}
+      - {label: Body, name: body, widget: markdown}
