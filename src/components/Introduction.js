@@ -41,7 +41,7 @@ const Aside = styled.aside`
   }
 `;
 
-export default ({ content }) => (
+export default () => (
   <StaticQuery
     query={graphql`
       {

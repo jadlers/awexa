@@ -12,7 +12,7 @@ const IndexPage = () => (
     <ImageDivider number={0} />
     <PersonalPresentations />
     <ImageDivider number={1} />
-    <Footer phone="0046 123 45 67" email="example@awexa.se" />
+    <Footer />
   </Layout>
 );
 
