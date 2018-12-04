@@ -1,0 +1,11 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "src/images"
+collections:
+  - name: "introduction"
+    label: "Introduktion"
+    folder: "_home/introduction"
+    create: false
+    fields:
+      - {label: "Body", name: "body", widget: "markdown"}
