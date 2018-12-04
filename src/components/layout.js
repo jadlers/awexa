@@ -33,7 +33,6 @@ const Layout = ({ children }) => (
       <>
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="se" />
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         </Helmet>
         <Main>
           <Header siteTitle={data.site.siteMetadata.title} />
