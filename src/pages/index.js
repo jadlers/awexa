@@ -8,28 +8,7 @@ import PersonalPresentations from '../components/PersonalPresentations';
 
 // TODO: Make this come from Netlify CMS
 const sections = [
-  {
-    id: 1,
-    title: 'Vilka är vi?',
-    content: (
-      <>
-        <h1>Vilka är vi?</h1>
-        <p>
-          Vi på Awexa hjälper dig att komma in på rätt spår. Vi har lång
-          erfarenhet (64 år) av att se till så du gör rätt saker i rätt tid på
-          rätt plats.
-        </p>
-        <p>
-          Allt ifrån din jobbkarriär till hur du fungerar i alla sammanhang.
-          Ditt liv ska fungera på alla plan och vi ser till att det gör så.
-        </p>
-        <p>
-          Känner Du att ditt liv inte fungerar som det ska hör du bara av dig så
-          bokar vi in en timmes första samtal.
-        </p>
-      </>
-    ),
-  },
+  { id: 1 },
   {
     id: 2,
     title: 'Agneta',
@@ -97,7 +76,7 @@ const sections = [
 
 const IndexPage = () => (
   <Layout>
-    <Introduction content={sections[0].content} />
+    <Introduction />
     <ImageDivider number={0} />
     <PersonalPresentations
       agneta={sections[1].content}

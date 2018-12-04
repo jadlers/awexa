@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
 import StickFigure from './StickFigure';
@@ -40,13 +41,29 @@ const Aside = styled.aside`
   }
 `;
 
-const Introduction = ({ content }) => (
-  <IntroductionWrapper>
-    <Content>{content}</Content>
-    <Aside>
-      <StickFigure />
-    </Aside>
-  </IntroductionWrapper>
+export default ({ content }) => (
+  <StaticQuery
+    query={graphql`
+      {
+        markdownRemark(
+          frontmatter: { page: { eq: "Home" }, title: { eq: "Introduction" } }
+        ) {
+          html
+        }
+      }
+    `}
+    render={data => {
+      const {
+        markdownRemark: { html: content },
+      } = data;
+      return (
+        <IntroductionWrapper>
+          <Content dangerouslySetInnerHTML={{ __html: content }} />
+          <Aside>
+            <StickFigure />
+          </Aside>
+        </IntroductionWrapper>
+      );
+    }}
+  />
 );
-
-export default Introduction;

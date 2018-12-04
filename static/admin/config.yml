@@ -22,4 +22,5 @@ collections:
         file: cms/home/introduction.md
         fields:
           - { label: Page, name: page, default: home }
+          - { label: title, name: title, widget: hidden, default: Introduction }
           - { label: Body, name: body, widget: markdown }

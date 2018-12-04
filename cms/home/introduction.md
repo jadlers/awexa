@@ -1,5 +1,6 @@
 ---
 page: Home
+title: Introduction
 ---
 # Vilka är vi?
 
