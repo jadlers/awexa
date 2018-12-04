@@ -49,9 +49,9 @@ export default () => (
     render={({ allMarkdownRemark: { edges } }) => (
       <Wrapper>
         {edges.map(({ node: { html, frontmatter: { title } } }) => (
-          <Presentation>
+          <Presentation key={title}>
             <h1>{title}</h1>
-            <content dangerouslySetInnerHTML={{ __html: html }} />
+            <div dangerouslySetInnerHTML={{ __html: html }} />
           </Presentation>
         ))}
       </Wrapper>
