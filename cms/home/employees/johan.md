@@ -1,9 +1,6 @@
 ---
 title: Johan
-page: Home
 ---
-# Johan
-
 Jag har sedan 1994 hjälpt folk att handera Word så att de kan skriva bra ansökningshandlingar. Mina kunskaper i Word är kompletta. Att läsa och tolka en platsannons och därefter skriva en bra ansökan är en konst som jag lärt mig och gärna delar med mig av.
 
 Är du på väg att hitta en ny karriär finns det mycket att ta hänsyn till. Dina kunskaper, egenskaper och färdigheter plockar vi fram för att därefter hitta rätt jobb åt dig.

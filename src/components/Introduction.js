@@ -45,20 +45,38 @@ export default ({ content }) => (
   <StaticQuery
     query={graphql`
       {
-        markdownRemark(
-          frontmatter: { page: { eq: "Home" }, title: { eq: "Introduction" } }
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/home/introduction.md$/" } }
         ) {
-          html
+          edges {
+            node {
+              frontmatter {
+                title
+              }
+              html
+            }
+          }
         }
       }
     `}
-    render={data => {
-      const {
-        markdownRemark: { html: content },
-      } = data;
+    render={({
+      allMarkdownRemark: {
+        edges: [
+          {
+            node: {
+              html,
+              frontmatter: { title },
+            },
+          },
+        ],
+      },
+    }) => {
       return (
         <IntroductionWrapper>
-          <Content dangerouslySetInnerHTML={{ __html: content }} />
+          <Content>
+            <h1>{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Content>
           <Aside>
             <StickFigure />
           </Aside>

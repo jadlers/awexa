@@ -37,6 +37,9 @@ export default () => (
         ) {
           edges {
             node {
+              frontmatter {
+                title
+              }
               html
             }
           }
@@ -45,8 +48,11 @@ export default () => (
     `}
     render={({ allMarkdownRemark: { edges } }) => (
       <Wrapper>
-        {edges.map(({ node: { html } }) => (
-          <Presentation dangerouslySetInnerHTML={{ __html: html }} />
+        {edges.map(({ node: { html, frontmatter: { title } } }) => (
+          <Presentation>
+            <h1>{title}</h1>
+            <content dangerouslySetInnerHTML={{ __html: html }} />
+          </Presentation>
         ))}
       </Wrapper>
     )}
