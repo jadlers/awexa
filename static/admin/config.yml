@@ -3,9 +3,11 @@ backend:
   branch: master
 media_folder: "src/images"
 collections:
-  - name: "introduction"
-    label: "Introduktion"
-    folder: "_home/introduction"
-    create: false
-    fields:
-      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "home"
+    label: "Hem"
+    files:
+      - file: "src/cms/home/introduction.md"
+        label: "Introduktion"
+        name: "introduction"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
