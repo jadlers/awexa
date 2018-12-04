@@ -12,3 +12,12 @@ collections:
     fields:
       - { label: Name, name: title, widget: string }
       - { label: Body, name: body, widget: markdown }
+
+  - label: Home
+    name: home
+    files:
+      - label: Introduction
+        name: introduction
+        file: cms/home/introduction.md
+        fields:
+          - {label: Body, name: body, widget: markdown}
