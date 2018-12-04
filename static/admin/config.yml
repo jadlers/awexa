@@ -8,8 +8,7 @@ collections:
   - label: Home Employees
     name: home-employees
     folder: cms/home/employees
-    create: true # TODO: Change to false
+    create: false
     fields:
-      - {label: Path, name: path}
       - {label: Name, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}

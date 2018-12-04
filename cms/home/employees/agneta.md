@@ -1,6 +1,5 @@
 ---
 title: "Agneta"
-path: "/home/persons/agneta"
 ---
 
 Jag har 40 års erfarenhet av att hjälpa folk med sin personliga utveckling. Som kurator och psykoterapeut använder jag mig av mina kunskaper i att plocka fram din personlighet. Vad som har gjort dig till den du är idag finns bakåt i tiden. Vi börjar där och går sedan hela vägen till din framtid.

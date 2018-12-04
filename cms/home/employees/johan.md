@@ -1,6 +1,5 @@
 ---
 title: "Johan"
-path: "/home/persons/johan"
 ---
 
 Jag har sedan 1994 hjälpt folk att handera Word så att de kan skriva bra ansökningshandlingar. Mina kunskaper i Word är kompletta. Att läsa och tolka en platsannons och därefter skriva en bra ansökan är en konst som jag lärt mig och gärna delar med mig av.
