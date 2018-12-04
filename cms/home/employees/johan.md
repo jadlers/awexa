@@ -1,7 +1,8 @@
 ---
+title: Johan
 page: Home
-title: "Johan"
 ---
+# Johan
 
 Jag har sedan 1994 hjälpt folk att handera Word så att de kan skriva bra ansökningshandlingar. Mina kunskaper i Word är kompletta. Att läsa och tolka en platsannons och därefter skriva en bra ansökan är en konst som jag lärt mig och gärna delar med mig av.
 
@@ -9,13 +10,12 @@ Jag har sedan 1994 hjälpt folk att handera Word så att de kan skriva bra ansö
 
 Vill du lära dig att hantera Excel hjälper jag dig gärna, för det är mitt favoritprogram.
 
-- Av mig kan du få hjälp med:
-  - Ditt karriärbyte
-  - Ditt karriärbyte
-  - Kartläggning av dig
-  - Att skriva ett bra CV
-  - Att skriva en bra jobbansökan
-  - Kunskaper i Word
-  - Kunskaper i Excel
-  - Hantera e-post
+Av mig kan du få hjälp med:
 
+* Ditt karriärbyte
+* Kartläggning av dig
+* Att skriva ett bra CV
+* Att skriva en bra jobbansökan
+* Kunskaper i Word
+* Kunskaper i Excel
+* Hantera e-post
