@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { StaticQuery, graphql } from 'gatsby';
 
 import { mq, sizes } from '../components/globalStyles';
 
@@ -14,25 +15,40 @@ const Wrapper = styled.section`
 `;
 
 const Presentation = styled.div`
-  ${mq('min', sizes.tablet)} {
-    padding: 0 2em;
-  }
+  font-size: 1.25em;
+  line-height: 1.35;
 
   h1 {
     margin-top: 0;
     font-size: 1.75em;
   }
 
-  p,
-  li {
-    font-size: 1.25em;
-    line-height: 1.35;
+  ${mq('min', sizes.tablet)} {
+    padding: 0 2em;
   }
 `;
 
-export default ({ agneta, johan }) => (
-  <Wrapper>
-    <Presentation>{agneta}</Presentation>
-    <Presentation>{johan}</Presentation>
-  </Wrapper>
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/home/employees/.*.md$/" } }
+        ) {
+          edges {
+            node {
+              html
+            }
+          }
+        }
+      }
+    `}
+    render={({ allMarkdownRemark: { edges } }) => (
+      <Wrapper>
+        {edges.map(({ node: { html } }) => (
+          <Presentation dangerouslySetInnerHTML={{ __html: html }} />
+        ))}
+      </Wrapper>
+    )}
+  />
 );
