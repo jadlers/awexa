@@ -3,7 +3,18 @@ module.exports = {
     title: 'Awexa',
   },
   plugins: [
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [{ family: `Titillium Web` }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -11,13 +22,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        fonts: [{ family: `Titillium Web` }],
+        name: `cms`,
+        path: `${__dirname}/cms`,
       },
     },
   ],

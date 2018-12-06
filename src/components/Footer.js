@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
 import { mq, sizes } from '../components/globalStyles';
@@ -48,15 +49,33 @@ const Split = styled.span`
   }
 `;
 
-export default ({ phone, email }) => {
-  const phoneNoSpaces = phone.replace(/ /g, '');
-  return (
-    <Footer>
-      <Contact href={`tel:${phoneNoSpaces}`}>{phone}</Contact>
-      <Div>
-        <Split>eller</Split>
-      </Div>
-      <Contact href={`mailto:${email}`}>{email}</Contact>
-    </Footer>
-  );
-};
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        markdownRemark(frontmatter: { title: { eq: "contact-details" } }) {
+          frontmatter {
+            phone
+            email
+          }
+        }
+      }
+    `}
+    render={({
+      markdownRemark: {
+        frontmatter: { email, phone },
+      },
+    }) => {
+      const phoneNoSpaces = phone.replace(/ /g, '');
+      return (
+        <Footer>
+          <Contact href={`tel:${phoneNoSpaces}`}>{phone}</Contact>
+          <Div>
+            <Split>eller</Split>
+          </Div>
+          <Contact href={`mailto:${email}`}>{email}</Contact>
+        </Footer>
+      );
+    }}
+  />
+);

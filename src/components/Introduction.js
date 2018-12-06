@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
 import StickFigure from './StickFigure';
@@ -40,13 +41,47 @@ const Aside = styled.aside`
   }
 `;
 
-const Introduction = ({ content }) => (
-  <IntroductionWrapper>
-    <Content>{content}</Content>
-    <Aside>
-      <StickFigure />
-    </Aside>
-  </IntroductionWrapper>
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/home/introduction.md$/" } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+              }
+              html
+            }
+          }
+        }
+      }
+    `}
+    render={({
+      allMarkdownRemark: {
+        edges: [
+          {
+            node: {
+              html,
+              frontmatter: { title },
+            },
+          },
+        ],
+      },
+    }) => {
+      return (
+        <IntroductionWrapper>
+          <Content>
+            <h1>{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Content>
+          <Aside>
+            <StickFigure />
+          </Aside>
+        </IntroductionWrapper>
+      );
+    }}
+  />
 );
-
-export default Introduction;

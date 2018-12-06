@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: src/images
+
+collections:
+  - label: Home Employees
+    name: home-employees
+    folder: cms/home/employees
+    create: false
+    fields:
+      - { label: Name, name: title, widget: string }
+      - { label: Page, name: page, default: home }
+      - { label: Body, name: body, widget: markdown }
+
+  - label: Home
+    name: home
+    files:
+      - label: Introduction
+        name: introduction
+        file: cms/home/introduction.md
+        fields:
+          - { label: Page, name: page, default: home }
+          - { label: title, name: title, widget: hidden, default: Introduction }
+          - { label: Body, name: body, widget: markdown }
+      - label: Contact Details
+        name: contact-details
+        file: cms/home/contact.md
+        fields:
+          - { label: Email, name: email, widget: string }
+          - {
+              label: Phone,
+              name: phone,
+              widget: string,
+              pattern:
+                [
+                  "^\\+?(\\d+\\ ?)+\\d$",
+                  "Only numbers allowed with an optional leading '+'. No leading or trailing whitespace",
+                ],
+            }
+          - {
+              label: Title,
+              name: title,
+              widget: hidden,
+              default: contact-details,
+            }
