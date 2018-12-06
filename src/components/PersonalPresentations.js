@@ -34,6 +34,7 @@ export default () => (
       {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/home/employees/.*.md$/" } }
+          sort: { fields: frontmatter___title, order: ASC }
         ) {
           edges {
             node {
