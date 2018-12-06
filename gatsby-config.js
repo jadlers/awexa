@@ -10,6 +10,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [{ family: `Titillium Web` }],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
