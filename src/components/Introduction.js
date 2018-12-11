@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
-import StickFigure from './StickFigure';
+import Humaaan from './Humaaan';
 import { mq, sizes } from '../components/globalStyles';
 
 const IntroductionWrapper = styled.section`
@@ -78,7 +78,7 @@ export default () => (
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </Content>
           <Aside>
-            <StickFigure />
+            <Humaaan />
           </Aside>
         </IntroductionWrapper>
       );
