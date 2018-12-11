@@ -9,6 +9,7 @@ const IntroductionWrapper = styled.section`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  justify-content: space-evenly;
 
   ${mq('min', sizes.tablet)} {
     flex-direction: row;
@@ -18,9 +19,9 @@ const IntroductionWrapper = styled.section`
 const Content = styled.div`
   color: #222;
 
-  ${mq('min', sizes.tablet)}: {
-    max-width: 55%;
-  };
+  ${mq('min', sizes.tablet)} {
+    max-width: 50%;
+  }
 
   h1: {
     margin-top: 0;
@@ -34,10 +35,8 @@ const Content = styled.div`
 `;
 
 const Aside = styled.aside`
-  margin: 0 auto;
-
   ${mq('min', sizes.tablet)} {
-    padding: 0 3em;
+    align-self: center;
   }
 `;
 

@@ -4,6 +4,8 @@ import PersonSVG from '../images/svg/Humaaan/Person1.js';
 import styled from 'react-emotion';
 
 const Person = styled(PersonSVG)`
+  overflow: visible;
+
   #g-legs {
     transition: all ease-in-out 0.6s;
     transform-origin: 58%;
