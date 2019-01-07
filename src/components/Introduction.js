@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'react-emotion';
 
@@ -40,47 +40,63 @@ const Aside = styled.aside`
   }
 `;
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/home/introduction.md$/" } }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      animate: false,
+    };
+  }
+
+  componentDidMount() {
+    // TODO: Make on scroll/after 3s?
+    setTimeout(() => {
+      this.setState({ animate: true });
+    }, 800);
+  }
+
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          {
+            allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "/home/introduction.md$/" } }
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    title
+                  }
+                  html
+                }
               }
-              html
             }
           }
-        }
-      }
-    `}
-    render={({
-      allMarkdownRemark: {
-        edges: [
-          {
-            node: {
-              html,
-              frontmatter: { title },
-            },
+        `}
+        render={({
+          allMarkdownRemark: {
+            edges: [
+              {
+                node: {
+                  html,
+                  frontmatter: { title },
+                },
+              },
+            ],
           },
-        ],
-      },
-    }) => {
-      return (
-        <IntroductionWrapper>
-          <Content>
-            <h1>{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </Content>
-          <Aside>
-            <Humaaan />
-          </Aside>
-        </IntroductionWrapper>
-      );
-    }}
-  />
-);
+        }) => (
+          <IntroductionWrapper>
+            <Content>
+              <h1>{title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: html }} />
+            </Content>
+            <Aside>
+              <Humaaan animate={this.state.animate} />
+            </Aside>
+          </IntroductionWrapper>
+        )}
+      />
+    );
+  }
+}
