@@ -4,6 +4,7 @@
     "react/prop-types": false
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   }
 }

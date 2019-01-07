@@ -49,10 +49,26 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    // TODO: Make on scroll/after 3s?
-    setTimeout(() => {
+    // Wait for the user to scroll or timeout before Humaan animation
+    const scrollPromise = this.createScrollListener();
+    Promise.race([this.timeoutPromise(2500), scrollPromise]).then(res => {
       this.setState({ animate: true });
-    }, 800);
+    });
+  }
+
+  createScrollListener() {
+    const scrollPromise = new Promise(resolve => {
+      window.addEventListener('scroll', () => {
+        resolve('Scroll resolve');
+      });
+    });
+    return scrollPromise;
+  }
+
+  timeoutPromise(duration) {
+    return new Promise(resolve =>
+      setTimeout(() => resolve('Timeout resolved'), duration)
+    );
   }
 
   render() {
