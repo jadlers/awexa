@@ -9,7 +9,7 @@ const Person = styled(PersonSVG)`
   #g-legs {
     transition: all ease-in-out 0.6s;
     transform-origin: 58%;
-    transform: ${props => (props['data-flip'] ? '0' : 'rotateY(0.5turn)')};
+    ${props => (props['data-flip'] ? '' : 'transform: rotateY(0.5turn);')}
   }
 `;
 
