@@ -11,7 +11,6 @@ collections:
     create: false
     fields:
       - { label: Name, name: title, widget: string }
-      - { label: Page, name: page, default: home }
       - { label: Body, name: body, widget: markdown }
 
   - label: Home
@@ -21,7 +20,6 @@ collections:
         name: introduction
         file: cms/home/introduction.md
         fields:
-          - { label: Page, name: page, default: home }
           - { label: title, name: title, widget: hidden, default: Introduction }
           - { label: Body, name: body, widget: markdown }
       - label: Contact Details
