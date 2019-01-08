@@ -35,9 +35,25 @@ const Content = styled.div`
 `;
 
 const Aside = styled.aside`
+  display: flex;
+  flex-direction: column;
+
   ${mq('min', sizes.tablet)} {
     align-self: center;
   }
+`;
+
+const Text = styled.p`
+  margin: 0 0 1em 0.5em;
+  font-size: 1.2em;
+  font-weight: bolder;
+`;
+
+const SlideInText = styled(Text)`
+  margin: 1em 0.5em 0 0;
+  text-align: right;
+  transition: all 0.6s ease-in-out;
+  ${props => (props.show ? '' : 'margin-right: 4em; opacity: 0;')}
 `;
 
 export default class extends Component {
@@ -108,7 +124,11 @@ export default class extends Component {
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </Content>
             <Aside>
+              <Text>Är du på väg åt rätt håll?</Text>
               <Humaaan animate={this.state.animate} />
+              <SlideInText show={this.state.animate}>
+                Vi hjälper dig!
+              </SlideInText>
             </Aside>
           </IntroductionWrapper>
         )}
