@@ -5,7 +5,7 @@ import styled from 'react-emotion';
 import { mq, sizes } from '../components/globalStyles';
 
 const Footer = styled.footer`
-  margin 0;
+  margin: 0;
   padding-bottom: 2em;
   text-align: center;
   color: #222;

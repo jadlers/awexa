@@ -2,5 +2,9 @@
   "extends": ["react", "prettier"],
   "rules": {
     "react/prop-types": false
+  },
+  "env": {
+    "browser": true,
+    "es6": true
   }
 }
