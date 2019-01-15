@@ -2,7 +2,7 @@ import React from 'react';
 import UpperBody from '../images/svg/UpperBody';
 import LegsSVG from '../images/svg/Legs';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 const Legs = styled(LegsSVG)`
   transform: translateY(-16.2%);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Humaaan from './Humaaan';
 import { mq, sizes } from '../components/globalStyles';

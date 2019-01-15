@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql, StaticQuery } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { mq, sizes } from '../components/globalStyles';
 
