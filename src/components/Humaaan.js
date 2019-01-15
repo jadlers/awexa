@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonSVG from '../images/svg/Humaaan/Person1.js';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 const Person = styled(PersonSVG)`
   overflow: visible;
