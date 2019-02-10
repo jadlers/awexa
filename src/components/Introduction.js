@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 
-import Humaaan from './Humaaan';
+import { Humaaan, AnimatedHumaaan } from './Humaaan';
 import { mq, sizes } from '../components/globalStyles';
 
 const IntroductionWrapper = styled.section`
@@ -125,7 +125,7 @@ export default class extends Component {
             </Content>
             <Aside>
               <Text>Är du på väg åt rätt håll?</Text>
-              <Humaaan animate={this.state.animate} />
+              {this.state.animate ? <AnimatedHumaaan /> : <Humaaan />}
               <SlideInText show={this.state.animate}>
                 Vi hjälper dig!
               </SlideInText>
