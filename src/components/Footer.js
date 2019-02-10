@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 
+import Map from './Map';
 import { mq, sizes } from '../components/globalStyles';
 
 const Footer = styled.footer`
@@ -74,6 +75,7 @@ export default () => (
             <Split>eller</Split>
           </Div>
           <Contact href={`mailto:${email}`}>{email}</Contact>
+          <Map />
         </Footer>
       );
     }}
