@@ -6,11 +6,11 @@ import { keyframes } from '@emotion/core';
 
 const animation = keyframes`
   from, to {
-    transform: rotateY(0);
+    transform: rotateY(0.5turn);
   }
 
   50% {
-    transform: rotateY(0.5turn);
+    transform: rotateY(0);
   }
 `;
 
@@ -20,6 +20,7 @@ export const Humaaan = styled(PersonSVG)`
   #g-legs {
     transition: all ease-in-out 0.6s;
     transform-origin: 58%;
+    transform: rotateY(0.5turn);
   }
 `;
 
